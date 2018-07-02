@@ -1,8 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AssessmentService} from "../assessment/assessment.service";
-import {UserService} from "../user-service/user.service";
 
-declare var jQuery:any;
 declare var Highcharts:any;
 
 @Component({
@@ -23,7 +20,7 @@ export class BarChartComponent implements OnInit {
 
   }
 
-  constructor(public assessmentService: AssessmentService, public userService: UserService) {
+  constructor() {
 
   }
 

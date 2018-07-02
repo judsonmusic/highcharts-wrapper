@@ -1,12 +1,16 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
-declare var jQuery:any;
+declare var Highcharts:any;
 
 @Component({
-  selector: 'my-chart',
-  template: `<div style="width:60%" id="container"></div>`
+  selector: 'simple-chart',
+  template: `<div style="width:60%" id="{{selector}}"></div>`
 })
 export class SimpleChartComponent {
+
+  @Input() selector;
+
+
   private data = [
     {
       name: 'USA',
@@ -34,7 +38,7 @@ export class SimpleChartComponent {
   }
 
   renderChart(){
-    jQuery('#container').highcharts({
+    Highcharts.chart(this.selector, {
       chart: {
         type: 'area'
       },
